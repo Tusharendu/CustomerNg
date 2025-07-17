@@ -1,0 +1,29 @@
+<h3>📋 Customer List</h3>
+
+<input type="text" [(ngModel)]="searchTerm" placeholder="Search by name or number" />
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Number</th>
+      <th>Name</th>
+      <th>DOB</th>
+      <th>Gender</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of filteredCustomers">
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.customerNumber }}</td>
+      <td>{{ customer.customerName }}</td>
+      <td>{{ customer.dateOfBirth | date }}</td>
+      <td>{{ customer.gender }}</td>
+      <td>
+        <button (click)="editCustomer(customer.id)">Edit</button>
+        <button (click)="deleteCustomer(customer.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
