@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-form',
-  templateUrl: './customer-form.component.html'
+  templateUrl: './customer-form.component.html',
+      styleUrls: ['./customer-form.component.css'],
+      encapsulation: ViewEncapsulation.None
 })
 export class CustomerFormComponent implements OnInit {
   customerId: number | null = null;

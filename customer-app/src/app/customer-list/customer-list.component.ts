@@ -1,16 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-customer-list',
-  templateUrl: './customer-list.component.html'
+  templateUrl: './customer-list.component.html',
+    styleUrls: ['./customer-list.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 export class CustomerListComponent implements OnInit {
   customers: any[] = [];
 
   constructor(private customerService: CustomerService, private router: Router, private authService: AuthService) {}
+
+  // Handle "Add Customer" button click
+  addCustomer() {
+    // Logic to open a form or navigate to an add page    
+    this.router.navigate(['/customer-form']);
+  }
 isAdmin(): boolean {
   return this.authService.isAdmin();
 }

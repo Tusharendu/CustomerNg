@@ -1,0 +1,122 @@
+/* Container for the entire customer list */
+.customer-list-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Header section with title and add button */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.8em;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.header-section .add-btn {
+  padding: 10px 20px;
+  background-color: #4A90E2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.header-section .add-btn:hover {
+  background-color: #357ABD;
+  transform: translateY(-2px);
+}
+
+/* Search input style */
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-input:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+thead {
+  background-color: #f4f4f4;
+}
+
+th {
+  padding: 14px 20px;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+}
+
+tbody tr {
+  transition: background-color 0.3s;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tbody tr:hover {
+  background-color: #f1f9ff;
+}
+
+td {
+  padding: 14px 20px;
+  color: #333;
+}
+
+/* Action buttons styling */
+button {
+  padding: 8px 12px;
+  margin-right: 8px;
+  background-color: #4A90E2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #357ABD;
+  transform: translateY(-2px);
+}
+
+/* Optional: Style for delete button differently */
+button:nth-child(2) {
+  background-color: #e74c3c;
+}
+
+button:nth-child(2):hover {
+  background-color: #c0392b;
+}

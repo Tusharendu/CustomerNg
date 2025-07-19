@@ -1,0 +1,85 @@
+/* Container to center the form */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+}
+
+/* Style for the form itself */
+form {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Center the header text */
+h3 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+/* Labels styling */
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Input and select styles */
+input[type="number"],
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+}
+
+/* Style for the submit button container to center it */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Style the button itself */
+button {
+  padding: 14px 20px;
+  background-color: #4A90E2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #357ABD;
+  transform: translateY(-2px);
+}

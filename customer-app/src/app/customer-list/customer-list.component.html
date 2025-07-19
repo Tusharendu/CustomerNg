@@ -1,29 +1,39 @@
-<h3>📋 Customer List</h3>
+<div class="customer-list-container">
+  <div class="header-section">
+    <h3>📋 Customer List</h3>
+    <button class="add-btn" (click)="addCustomer()" *ngIf="isAdmin()">Add Customer</button>
+  </div>
 
-<input type="text" [(ngModel)]="searchTerm" placeholder="Search by name or number" />
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search by name or number"
+    class="search-input"
+  />
 
-<table border="1">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Number</th>
-      <th>Name</th>
-      <th>DOB</th>
-      <th>Gender</th>
-      <th *ngIf="isAdmin()">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let customer of filteredCustomers">
-      <td>{{ customer.id }}</td>
-      <td>{{ customer.customerNumber }}</td>
-      <td>{{ customer.customerName }}</td>
-      <td>{{ customer.dateOfBirth | date }}</td>
-      <td>{{ customer.gender }}</td>
-      <td *ngIf="isAdmin()">
-        <button (click)="editCustomer(customer.id)">Edit</button>
-        <button (click)="deleteCustomer(customer.id)">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Number</th>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th *ngIf="isAdmin()">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of filteredCustomers">
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.customerNumber }}</td>
+        <td>{{ customer.customerName }}</td>
+        <td>{{ customer.dateOfBirth | date }}</td>
+        <td>{{ customer.gender }}</td>
+        <td *ngIf="isAdmin()">
+          <button (click)="editCustomer(customer.id)">Edit</button>
+          <button (click)="deleteCustomer(customer.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

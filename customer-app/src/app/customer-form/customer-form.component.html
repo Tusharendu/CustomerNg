@@ -1,19 +1,24 @@
-<h3>{{ customerId ? 'Edit' : 'Add' }} Customer</h3>
+<div class="form-container">
+<form (ngSubmit)="submit()">
+  <h3>{{ customerId ? 'Edit' : 'Add' }} Customer</h3>
 
-<label>Customer Number:</label>
-<input type="number" [(ngModel)]="customerNumber" />
+  <label>Customer Number:</label>
+  <input type="number" [(ngModel)]="customerNumber" name="customerNumber" />
 
-<label>Customer Name:</label>
-<input type="text" [(ngModel)]="customerName" />
+  <label>Customer Name:</label>
+  <input type="text" [(ngModel)]="customerName" name="customerName" />
 
-<label>Date of Birth:</label>
-<input type="date" [(ngModel)]="dateOfBirth" />
+  <label>Date of Birth:</label>
+  <input type="date" [(ngModel)]="dateOfBirth" name="dateOfBirth" />
 
-<label>Gender:</label>
-<select [(ngModel)]="gender">
-  <option value="Male">Male</option>
-  <option value="Female">Female</option>
-</select>
+  <label>Gender:</label>
+  <select [(ngModel)]="gender" name="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
 
-<button (click)="submit()">{{ customerId ? 'Update' : 'Add' }} Customer</button>
-
+  <div class="button-container">
+    <button type="submit">{{ customerId ? 'Update' : 'Add' }} Customer</button>
+  </div>
+</form>
+</div>
