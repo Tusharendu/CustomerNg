@@ -10,7 +10,7 @@
       <th>Name</th>
       <th>DOB</th>
       <th>Gender</th>
-      <th>Actions</th>
+      <th *ngIf="isAdmin()">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -20,7 +20,7 @@
       <td>{{ customer.customerName }}</td>
       <td>{{ customer.dateOfBirth | date }}</td>
       <td>{{ customer.gender }}</td>
-      <td>
+      <td *ngIf="isAdmin()">
         <button (click)="editCustomer(customer.id)">Edit</button>
         <button (click)="deleteCustomer(customer.id)">Delete</button>
       </td>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -9,8 +10,10 @@ import { Router } from '@angular/router';
 export class CustomerListComponent implements OnInit {
   customers: any[] = [];
 
-  constructor(private customerService: CustomerService, private router: Router) {}
-
+  constructor(private customerService: CustomerService, private router: Router, private authService: AuthService) {}
+isAdmin(): boolean {
+  return this.authService.isAdmin();
+}
   ngOnInit(): void {
     this.customerService.getAllCustomers().subscribe({
       next: (data) => this.customers = data,

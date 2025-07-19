@@ -15,7 +15,7 @@ export class LoginComponent {
   login() {
     this.authService.login(this.username, this.password).subscribe({
       next: () => {
-        this.router.navigate(['/customer-form']);
+        this.router.navigate(['/customer-list']);
       },
       error: () => {
         alert('Invalid credentials');
